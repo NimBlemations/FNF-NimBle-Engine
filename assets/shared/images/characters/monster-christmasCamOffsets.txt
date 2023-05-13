@@ -1,0 +1,2 @@
+singRIGHT -20 0
+singLEFT 20 0
