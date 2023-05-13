@@ -125,7 +125,7 @@ class Note extends FlxSprite
 				animation.addByPrefix('redhold', 'red hold piece');
 				animation.addByPrefix('bluehold', 'blue hold piece');
 
-				setGraphicSize(Std.int(width * (0.7 * noteWidth)));
+				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
 
@@ -206,8 +206,7 @@ class Note extends FlxSprite
 
 	public function updateColors():Void
 	{
-		colorSwap.update(CoolUtil.arrowColors[keySetBelong][noteData]);
-		colorSwap.satShit = CoolUtil.arrowSat[keySetBelong][noteData];
+		colorSwap.update(arrowColors[noteData]);
 	}
 
 	override function update(elapsed:Float)

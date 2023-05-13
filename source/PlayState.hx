@@ -1816,7 +1816,7 @@ class PlayState extends MusicBeatState
 					babyArrow.animation.add('blue', [5]);
 					babyArrow.animation.add('purplel', [4]);
 
-					babyArrow.setGraphicSize(Std.int(babyArrow.width * (daPixelZoom * Note.noteWidth)));
+					babyArrow.setGraphicSize(Std.int(babyArrow.width * daPixelZoom));
 					babyArrow.updateHitbox();
 					babyArrow.antialiasing = false;
 					
@@ -1850,11 +1850,11 @@ class PlayState extends MusicBeatState
 					babyArrow.animation.addByPrefix('red', 'arrowRIGHT');
 
 					babyArrow.antialiasing = true;
-					babyArrow.setGraphicSize(Std.int(babyArrow.width * (0.7 * Note.noteWidth)));
+					babyArrow.setGraphicSize(Std.int(babyArrow.width * 0.7));
 					
 					babyArrow.x += Note.swagWidth * i;
 
-					switch (Note.setOfKeys[SONG.keySet][i])
+					switch (Math.abs(i))
 					{
 						case 0:
 							babyArrow.animation.addByPrefix('static', 'arrow static instance 1');
@@ -2725,7 +2725,7 @@ class PlayState extends MusicBeatState
 		if (isSick && prefNoteSplash)
 		{
 			var noteSplash:NoteSplash = grpNoteSplashes.recycle(NoteSplash);
-			noteSplash.setupNoteSplash(daNote.x, daNote.y, daNote.noteData, SONG.keySet);
+			noteSplash.setupNoteSplash(daNote.x, daNote.y, daNote.noteData);
 			// new NoteSplash(daNote.x, daNote.y, daNote.noteData);
 			grpNoteSplashes.add(noteSplash);
 		}
