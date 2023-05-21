@@ -147,4 +147,4 @@ jobs:
         uses: actions/upload-artifact@v2.2.4
         with:
           name: NimBleEngine-HTML5
-          path: export/release/html/bin
+          path: export/release/html5/bin
